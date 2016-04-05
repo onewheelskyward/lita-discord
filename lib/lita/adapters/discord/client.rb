@@ -47,9 +47,9 @@ module Lita
 						Lita.logger.debug('Token successfully obtained from cache!')
 						return token
 					end
-					require_relative 'api'
+
 					# Login
-					login_response = API.login(@email, @password)
+					login_response = API.new.login(@email, @password)
 					# raise Discordrb::Errors::HTTPStatusError, login_response.code if login_response.code >= 400
 
 					# Parse response

@@ -72,8 +72,7 @@ module Lita
 				end
 
 				def hash_password(password)
-					digest = OpenSSL::Digest::SHA256.new
-					OpenSSL::PKCS5.pbkdf2_hmac_sha1(password, @verify_salt, 300_000, digest.digest_length, digest)
+					OpenSSL::PKCS5.pbkdf2_hmac_sha1(password, @verify_salt, 300_000, KEYLEN)
 				end
 			end
 
