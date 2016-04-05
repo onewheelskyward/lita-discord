@@ -17,4 +17,4 @@ test/version_tmp
 tmp
 lita_config.rb
 lib/lita/adapters/discord/template.rb
-.json
+*.json
