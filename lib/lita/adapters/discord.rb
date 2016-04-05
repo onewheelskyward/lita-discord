@@ -1,3 +1,5 @@
+require_relative "discord/client"
+
 module Lita
   module Adapters
     class Discord < Adapter
@@ -8,28 +10,28 @@ module Lita
       	super
 
       	## TIME TO REBUILD THIS SHIZZZZZZ
-      	@client = Discord::Client.new(config.email, config.password)
+      	@client = Client.new(config.email, config.password)
       end
 
-      def run
-      	@client.on_connect do
-					robot.trigger(:connected)      		
-      	end
+     #  def run
+     #  	@client.on_connect do
+					# robot.trigger(:connected)      		
+     #  	end
 
-      	@client.on_message do |message, user, channel|
-      		user = Lita::User.find_by_name(user)
-      		user = Lita::User.create(user) unless user
-      		source = Lita::Source.new(user: user, room: channel)
-      		message = Lita::Message.new(robot, message, source)
-      		robot.receive(message)
-      	end
+     #  	@client.on_message do |message, user, channel|
+     #  		user = Lita::User.find_by_name(user)
+     #  		user = Lita::User.create(user) unless user
+     #  		source = Lita::Source.new(user: user, room: channel)
+     #  		message = Lita::Message.new(robot, message, source)
+     #  		robot.receive(message)
+     #  	end
 
-      	@client.connect
-      end
+     #  	@client.connect
+     #  end
 
-      def shut_down
-      	@client.disconnect
-      end
+      # def shut_down
+      # 	@client.disconnect
+      # end
 
       # def mention_format(user_id)
       # 	"@<#{user_id}>"
