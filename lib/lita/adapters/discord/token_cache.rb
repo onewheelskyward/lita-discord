@@ -1,7 +1,7 @@
 require 'base64'
 require 'json'
 require 'openssl'
-require_relative 'api'
+require 'lita/adapters/discord/api'
 
 module Lita
 	module Adapters

@@ -1,4 +1,5 @@
-require_relative "discord/client"
+require 'lita'
+require "lita/adapters/discord/client"
 
 module Lita
 	module Adapters
