@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "lita", ">= 4.7"
 
   spec.add_dependency 'rest-client'
+  spec.add_dependency 'faye-websocket'
+  spec.add_dependency 'websocket-client-simple'
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "pry-byebug"
