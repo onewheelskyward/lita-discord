@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/kyleboe/lita-discord"
   spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "adapter" }
+  spec.required_ruby_version = ">= 2.3.0"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
